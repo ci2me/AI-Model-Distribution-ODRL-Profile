@@ -10,7 +10,7 @@
 @prefix cc: <http://creativecommons.org/ns#> .
 @prefix profile: <http://www.w3.org/ns/dx/prof/> .
 @prefix airo: <https://delaramglp.github.io/airo/> .
-@prefix aimd: <https://www.example.com> .
+@prefix aimd: <https://raw.githubusercontent.com/ci2me/AI-Model-Distribution-ODRL-Profile/main/AIMD.ttl> .
 
 aimd:
     a owl:Ontology, profile:Profile ;
@@ -20,7 +20,7 @@ aimd:
     dct:title "AI Model Distribution" ;
     dct:creator "Cian Twomey" ;
     dct:created "2024-04-07"^^xsd:date ;
-    dct:description "The aimd Profile 1 defines a set of concepts and terms for permissions, prohibitions, obligations, and constraints statememts describing usage of AI systems" ;
+    dct:description "The AIMD Profile 1 defines a set of concepts and terms for permissions, prohibitions, obligations, and constraints statememts describing usage of AI systems" ;
     rdfs:comment "This is the RDF ontology for aimd Profile 1.0" ;
     dct:license <http://creativecommons.org/licenses/by/4.0/> .
 
@@ -28,7 +28,7 @@ aimd:
     a skos:Collection ;
     skos:prefLabel "AIMD Profile 1.0 Vocabulary"@en ;
     skos:scopeNote "AIMD Core Vocabulary Terms"@en ;
-    skos:member aimd:ProhibitedPurposes ;
+    skos:member aimd:PurposeOfDerivation ;
     skos:member aimd:SocialScoring ;
     skos:member aimd:RemoteBiometricIdentification ;
     skos:member aimd:BiometricCategorisation ;
@@ -49,6 +49,12 @@ aimd:
     skos:member aimd:AssessModelRisk ;
     skos:member aimd:ReportSeriousIncidents ;
     skos:member aimd:EnsureDataProtection .
+
+aimd:PurposeOfDerivation a airo:Purpose, odrl:leftOperand ;
+    rdfs:isDefinedBy aimd: ;
+    rdfs:subClassOf airo:Purpose ;
+    rdfs:label "Purpose of Derivative"@en ;
+    skos:definition "The intended purpose of the AI system derived from this AI model"@en .
 
 aimd:SocialScoring a airo:Purpose, odrl:rightOperand ;
     rdfs:isDefinedBy aimd: ;
