@@ -20,6 +20,7 @@
         odrl:action odrl:use ;
         odrl:action odrl:derive ;
         odrl:action odrl:grantUse ;
+        odrl:action cc:ShareAlike ;
         odrl:constraint [
             odrl:leftOperand airo:Purpose ;
             odrl:operator odrl:isNoneOf ;
