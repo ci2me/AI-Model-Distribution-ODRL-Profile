@@ -1,0 +1,172 @@
+@prefix odrl: <http://www.w3.org/ns/odrl/2/> .
+@prefix dpv:  <https://w3id.org/dpv#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix schema: <http://schema.org/> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix profile: <http://www.w3.org/ns/dx/prof/> .
+@prefix airo: <https://delaramglp.github.io/airo/> .
+# Add your github raw data
+@prefix aimd: <https://www.example.com> .
+
+aimd:
+    a owl:Ontology, profile:Profile ;
+    profile:isProfileOf <http://www.w3.org/ns/odrl/2/> ;
+    rdfs:label "AIMD Profile 1.0" ;
+    owl:versionInfo "1.0" ;
+    dct:title "AI Model Distribution" ;
+    dct:creator "Cian Twomey" ;
+    dct:created "2024-04-07"^^xsd:date ;
+    dct:description "The aimd Profile 1 defines a set of concepts and terms for permissions, prohibitions, obligations, and constraints statememts describing usage of AI systems" ;
+    rdfs:comment "This is the RDF ontology for aimd Profile 1.0" ;
+    dct:license <http://creativecommons.org/licenses/by/4.0/> .
+
+aimd:
+    a skos:Collection ;
+    skos:prefLabel "AIMD Profile 1.0 Vocabulary"@en ;
+    skos:scopeNote "AIMD Core Vocabulary Terms"@en ;
+    skos:member aimd:ProhibitedPurposes ;
+    skos:member aimd:SocialScoring ;
+    skos:member aimd:RemoteBiometricIdentification ;
+    skos:member aimd:BiometricCategorisation ;
+    skos:member aimd:Manipulation ;
+    skos:member aimd:VulnerableExploitation ;
+    skos:member aimd:AssessCrimeLikelihood ;
+    skos:member aimd:FacialDataScraping ;
+    skos:member aimd:EmotionInference ;
+    skos:member aimd:EstablishRiskManagement ;
+    skos:member aimd:ConductDataGovernance ;
+    skos:member aimd:ProvideTechDocumentation ;
+    skos:member aimd:Record ;
+    skos:member aimd:ProvideUseInstructions ;
+    skos:member aimd:AllowHumanOversight ;
+    skos:member aimd:EstablishQualityManagement ;
+    skos:member aimd:DocumentAccuracyRobustCybersecurity ;
+    skos:member aimd:DocumentTrainingData ;
+    skos:member aimd:AssessModelRisk ;
+    skos:member aimd:ReportSeriousIncidents ;
+    skos:member aimd:EnsureDataProtection .
+
+aimd:SocialScoring a airo:Purpose, odrl:rightOperand ;
+    rdfs:isDefinedBy aimd: ;
+    rdfs:subClassOf airo:Purpose ;
+    rdfs:label "Social Scoring"@en ;
+    skos:definition "Using an AI system to evaluate or classify natural persons or groups based on their social behaviour"@en .
+
+aimd:RemoteBiometricIdentification a airo:Purpose, odrl:rightOperand ;
+    rdfs:isDefinedBy aimd: ;
+    rdfs:subClassOf airo:Purpose ;
+    rdfs:label "Remote Biometric Identification"@en ;
+    skos:definition "Using an AI system for real-time remote biometric identification in publicly accessible spaces"@en .
+
+aimd:BiometricCategorisation a airo:Purpose, odrl:rightOperand ;
+    rdfs:isDefinedBy aimd: ;
+    rdfs:subClassOf airo:Purpose ;
+    rdfs:label "Biometric Categorisation"@en ;
+    skos:definition "Using an AI system to categorise individually natural persons based on their biometric data to deduce or infer their race, political views, trade union membership, religious or philisopical beliefs, sex life, or sexual orientation"@en .
+
+aimd:Manipulation a airo:Purpose, odrl:rightOperand ;
+    rdfs:isDefinedBy aimd: ;
+    rdfs:subClassOf airo:Purpose ;
+    rdfs:label "Manipulation"@en ;
+    skos:definition "Using an AI system to manipulate or deceive natural persons with the objective to impaimd the person's ability to make decisions"@en .
+
+aimd:VulnerableExploitation a airo:Purpose, odrl:rightOperand ;
+    rdfs:isDefinedBy aimd: ;
+    rdfs:subClassOf airo:Purpose ;
+    rdfs:label "Exploitation of vulnerable parties"@en ;
+    skos:definition "Using an AI system to exploit vulnerabilities of a person or a group of persons due to their age, disability or a specific social or economic situation with the objective of distorting their behaviour to cause that person to harm another person"@en .
+
+aimd:AssessCrimeLikelihood a airo:Purpose, odrl:rightOperand ;
+    rdfs:isDefinedBy aimd: ;
+    rdfs:subClassOf airo:Purpose ;
+    rdfs:label "Assess Crime Likelihood"@en ;
+    skos:definition "Using an AI system to predict the likelihood of a natural person to commit a crime, based solely on the profiling or on assessing the personality or characteristics of the person"@en .
+
+aimd:FacialDataScraping a airo:Purpose, odrl:rightOperand ;
+    rdfs:isDefinedBy aimd: ;
+    rdfs:subClassOf airo:Purpose ;
+    rdfs:label "Facial Data Scraping"@en ;
+    skos:definition "Using an AI system to create or expand facial recognition databases through untargeted facial data scraping from the internet or CCTV footage"@en .
+
+aimd:EmotionInference a airo:Purpose, odrl:rightOperand ;
+    rdfs:isDefinedBy aimd: ;
+    rdfs:subClassOf airo:Purpose ;
+    rdfs:label "Emotion Inference"@en ;
+    skos:definition "Using an AI system to infer emotions of a natural person in the areas of workplace and educational institutions"@en .
+
+aimd:EstablishRiskManagement a odrl:action, odrl:obligation ;
+    rdfs:isDefinedBy aimd: ;
+    rdfs:subClassOf odrl:obligation ;
+    rdfs:label "Establish Risk Management"@en ;
+    skos:definition "To establish a risk management system for the AI system and provide documentation"@en .
+
+aimd:ConductDataGovernance a odrl:action, odrl:obligation ;
+    rdfs:isDefinedBy aimd: ;
+    rdfs:subClassOf odrl:obligation ;
+    rdfs:label "Conduct Data Governance"@en ;
+    skos:definition "To conduct data governance, ensuring the training datasets are relevant, representative, accurate"@en .
+
+aimd:ProvideTechDocumentation a odrl:action, odrl:obligation ;
+    rdfs:isDefinedBy aimd: ;
+    rdfs:subClassOf odrl:obligation ;
+    rdfs:label "Provide Technical Documentation"@en ;
+    skos:definition "To provide technical documentation of the AI system to show the compliance of the system with the requirements of the AI Act"@en .
+
+aimd:Record a odrl:action, odrl:obligation ;
+    rdfs:isDefinedBy aimd: ;
+    rdfs:subClassOf odrl:obligation ;
+    rdfs:label "Record"@en ;
+    skos:definition "To allow the automatic recording of events over the duration of the lifetime of the AI system"@en .
+
+aimd:ProvideUseInstructions a odrl:action, odrl:obligation ;
+    rdfs:isDefinedBy aimd: ;
+    rdfs:subClassOf odrl:obligation ;
+    rdfs:label "Provide instructions of use"@en ;
+    skos:definition "To provide instructions of use to users and identification of provider, to give transparency regarding capabilities and limitations of AI system"@en .
+
+aimd:AllowHumanOversight a odrl:action, odrl:obligation ;
+    rdfs:isDefinedBy aimd: ;
+    rdfs:subClassOf odrl:obligation ;
+    rdfs:label "Allow Human Oversight"@en ;
+    skos:definition "To design an AI system in a way that it may be overseen by humans while in use"@en .
+
+aimd:EstablishQualityManagement a odrl:action, odrl:obligation ;
+    rdfs:isDefinedBy aimd: ;
+    rdfs:subClassOf odrl:obligation ;
+    rdfs:label "Establish Quality Management"@en ;
+    skos:definition "To put a quality management system in place to ensure compliance with the EU AI ACT"@en .
+
+aimd:DocumentAccuracyRobustCybersecurity a odrl:action, odrl:obligation ;
+    rdfs:isDefinedBy aimd: ;
+    rdfs:subClassOf odrl:obligation ;
+    rdfs:label "Document Accuracy, Robustness and Cybersecurity"@en ;
+    skos:definition "To develop and document methodologies to measure accuracy, robustness and cybersecurity of an AI system"@en .
+
+aimd:DocumentTrainingData a odrl:action, odrl:obligation ;
+    rdfs:isDefinedBy aimd: ;
+    rdfs:subClassOf odrl:obligation ;
+    rdfs:label "Document Training Data"@en ;
+    skos:definition "To document and publish a summary of the data used for training, testing, validation of an AI model"@en .
+
+aimd:AssessModelRisk a odrl:action, odrl:obligation ;
+    rdfs:isDefinedBy aimd: ;
+    rdfs:subClassOf odrl:obligation ;
+    rdfs:label "Assess Model Risk"@en ;
+    skos:definition "To assess and mitigate risks of an AI model"@en .
+
+aimd:ReportSeriousIncidents a odrl:action, odrl:obligation ;
+    rdfs:isDefinedBy aimd: ;
+    rdfs:subClassOf odrl:obligation ;
+    rdfs:label "Report Serious Incidents"@en ;
+    skos:definition "To report serious incidents and their possible corrective measures to the EU AI Office"@en .
+
+aimd:EnsureDataProtection a odrl:action, odrl:obligation ;
+    rdfs:isDefinedBy aimd: ;
+    rdfs:subClassOf odrl:obligation ;
+    rdfs:label "Ensure Data Protection"@en ;
+    skos:definition "To ensure personal data is anonymised and consent for personal data processing is obtained"@en .
