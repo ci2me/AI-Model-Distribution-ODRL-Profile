@@ -10,7 +10,6 @@
 @prefix cc: <http://creativecommons.org/ns#> .
 @prefix profile: <http://www.w3.org/ns/dx/prof/> .
 @prefix airo: <https://delaramglp.github.io/airo/> .
-# Add your github raw data
 @prefix aimd: <https://www.example.com> .
 
 aimd:
