@@ -9,8 +9,9 @@
 @prefix schema: <http://schema.org/> .
 @prefix cc: <http://creativecommons.org/ns#> .
 @prefix profile: <http://www.w3.org/ns/dx/prof/> .
-@prefix airo: <https://delaramglp.github.io/airo/> .
-@prefix aimd: <https://raw.githubusercontent.com/ci2me/AI-Model-Distribution-ODRL-Profile/main/AIMD.ttl> .
+@prefix airo: <https://w3id.org/airo#> .
+@prefix aimd: <https://github.com/ci2me/AI-Model-Distribution-ODRL-Profile/blob/main/AIMD.ttl> .
+
 
 aimd:
     a owl:Ontology, profile:Profile ;
@@ -37,6 +38,7 @@ aimd:
     skos:member aimd:AssessCrimeLikelihood ;
     skos:member aimd:FacialDataScraping ;
     skos:member aimd:EmotionInference ;
+    skos:member aimd:DerivedFrom ;
     skos:member aimd:EstablishRiskManagement ;
     skos:member aimd:ConductDataGovernance ;
     skos:member aimd:ProvideTechDocumentation ;
@@ -48,7 +50,9 @@ aimd:
     skos:member aimd:DocumentTrainingData ;
     skos:member aimd:AssessModelRisk ;
     skos:member aimd:ReportSeriousIncidents ;
-    skos:member aimd:EnsureDataProtection .
+    skos:member aimd:EnsureDataProtection ;
+    skos:member aimd:UploadDerivations ;
+    skos:member aimd:UploadUseOfDerivation .
 
 aimd:PurposeOfDerivation a airo:Purpose, odrl:leftOperand ;
     rdfs:isDefinedBy aimd: ;
@@ -78,7 +82,7 @@ aimd:Manipulation a airo:Purpose, odrl:rightOperand ;
     rdfs:isDefinedBy aimd: ;
     rdfs:subClassOf airo:Purpose ;
     rdfs:label "Manipulation"@en ;
-    skos:definition "Using an AI system to manipulate or deceive natural persons with the objective to impaimd the person's ability to make decisions"@en .
+    skos:definition "Using an AI system to manipulate or deceive natural persons with the objective to impair the person's ability to make decisions"@en .
 
 aimd:VulnerableExploitation a airo:Purpose, odrl:rightOperand ;
     rdfs:isDefinedBy aimd: ;
@@ -175,3 +179,15 @@ aimd:EnsureDataProtection a odrl:action, odrl:obligation ;
     rdfs:subClassOf odrl:obligation ;
     rdfs:label "Ensure Data Protection"@en ;
     skos:definition "To ensure personal data is anonymised and consent for personal data processing is obtained"@en .
+
+aimd:UploadDerivations a odrl:action, odrl:obligation ;
+    rdfs:isDefinedBy aimd: ;
+    rdfs:subClassOf odrl:obligation ;
+    rdfs:label "Upload Derivation"@en ;
+    skos:definition "To upload published derivative work to owners database"@en .
+    
+aimd:UploadUseOfDerivation  a odrl:action, odrl:obligation ;
+    rdfs:isDefinedBy aimd: ;
+    rdfs:subClassOf odrl:obligation ;
+    rdfs:label "Upload Use Of Derivation"@en ;
+    skos:definition "To record and upload usage details to be accessed by owner of original model"@en .
