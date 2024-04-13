@@ -9,7 +9,7 @@
 @prefix schema: <http://schema.org/> .
 @prefix cc: <http://creativecommons.org/ns#> .
 @prefix profile: <http://www.w3.org/ns/dx/prof/> .
-@prefix airo: <https://delaramglp.github.io/airo/> .
+@prefix airo: <https://w3id.org/airo#> .
 @prefix aimd: <https://raw.githubusercontent.com/ci2me/AI-Model-Distribution-ODRL-Profile/main/AIMD.ttl> .
 
 <https://raw.githubusercontent.com/ci2me/AI-Model-Distribution-ODRL-Profile/main/Policy39a0dd61-bb0e-4f53-abe4-f8de57e80317> a odrl:Policy, odrl:Set ;
@@ -23,40 +23,98 @@
         odrl:action cc:ShareAlike ;
         odrl:constraint [
             odrl:leftOperand airo:Purpose ;
-            odrl:operator odrl:isNoneOf ;
+            odrl:operator odrl:neq ;
             odrl:rightOperand aimd:SocialScoring ;
+        ];
+        odrl:constraint [
+            odrl:leftOperand airo:Purpose ;
+            odrl:operator odrl:neq ;
             odrl:rightOperand aimd:RemoteBiometricIdentification ;
+        ];
+        odrl:constraint [
+            odrl:leftOperand airo:Purpose ;
+            odrl:operator odrl:neq ;
             odrl:rightOperand aimd:BiometricCategorisation ;
+        ];
+        odrl:constraint [
+            odrl:leftOperand airo:Purpose ;
+            odrl:operator odrl:neq ;
             odrl:rightOperand aimd:Manipulation ;
+        ];
+        odrl:constraint [
+            odrl:leftOperand airo:Purpose ;
+            odrl:operator odrl:neq ;
             odrl:rightOperand aimd:VulnerableExploitation ;
+        ];
+        odrl:constraint [
+            odrl:leftOperand airo:Purpose ;
+            odrl:operator odrl:neq ;
             odrl:rightOperand aimd:AssessCrimeLikelihood ;
+        ];
+        odrl:constraint [
+            odrl:leftOperand airo:Purpose ;
+            odrl:operator odrl:neq ;
             odrl:rightOperand aimd:FacialDataScraping ;
+        ];
+        odrl:constraint [
+            odrl:leftOperand airo:Purpose ;
+            odrl:operator odrl:neq ;
             odrl:rightOperand aimd:EmotionInference ;
-        ] ;
+        ];
         odrl:constraint [
             odrl:leftOperand airo:PurposeOfDerivation ;
-            odrl:operator odrl:isNoneOf ;
-            odrl:rightOperand aimd:SocialScoring ;
+            odrl:operator odrl:neq ;
+            odrl:rightOperand aimd:SocialScoringOfDerivation ;
+        ];
+        odrl:constraint [
+            odrl:leftOperand airo:PurposeOfDerivation ;
+            odrl:operator odrl:neq ;
             odrl:rightOperand aimd:RemoteBiometricIdentification ;
+        ];
+        odrl:constraint [
+            odrl:leftOperand airo:PurposeOfDerivation ;
+            odrl:operator odrl:neq ;
             odrl:rightOperand aimd:BiometricCategorisation ;
+        ];
+        odrl:constraint [
+            odrl:leftOperand airo:PurposeOfDerivation ;
+            odrl:operator odrl:neq ;
             odrl:rightOperand aimd:Manipulation ;
+        ];
+        odrl:constraint [
+            odrl:leftOperand airo:PurposeOfDerivation ;
+            odrl:operator odrl:neq ;
             odrl:rightOperand aimd:VulnerableExploitation ;
+        ];
+        odrl:constraint [
+            odrl:leftOperand airo:PurposeOfDerivation ;
+            odrl:operator odrl:neq ;
             odrl:rightOperand aimd:AssessCrimeLikelihood ;
+        ];
+        odrl:constraint [
+            odrl:leftOperand airo:PurposeOfDerivation ;
+            odrl:operator odrl:neq ;
             odrl:rightOperand aimd:FacialDataScraping ;
+        ];
+        odrl:constraint [
+            odrl:leftOperand airo:PurposeOfDerivation ;
+            odrl:operator odrl:neq ;
             odrl:rightOperand aimd:EmotionInference ;
-        ] ;
+        ];
         odrl:obligation [
-            odrl:action aimd:EstablishRiskManagement ;
-            odrl:action aimd:ConductDataGovernance ;
-            odrl:action aimd:ProvideTechDocumentation ;
-            odrl:action aimd:Record ;
-            odrl:action aimd:ProvideUseInstructions ;
-            odrl:action aimd:AllowHumanOversight ;
-            odrl:action aimd:EstablishQualityManagement ;
-            odrl:action aimd:DocumentAccuracyRobustCybersecurity ;
-            odrl:action aimd:DocumentTrainingData ;
-            odrl:action aimd:AssessModelRisk ;
-            odrl:action aimd:ReportSeriousIncidents ;
-            odrl:action aimd:EnsureDataProtection ;
+            odrl:action aimd:EstablishRiskManagement ,
+            aimd:ConductDataGovernance ,
+            aimd:ProvideTechDocumentation ,
+            aimd:Record ,
+            aimd:ProvideUseInstructions ,
+            aimd:AllowHumanOversight ,
+            aimd:EstablishQualityManagement ,
+            aimd:DocumentAccuracyRobustCybersecurity ,
+            aimd:DocumentTrainingData ,
+            aimd:AssessModelRisk ,
+            aimd:ReportSeriousIncidents ,
+            aimd:EnsureDataProtection ,
+            aimd:UploadDerivations ,
+            aimd:UploadUseOfDerivation ;
         ] ;
     ] .
