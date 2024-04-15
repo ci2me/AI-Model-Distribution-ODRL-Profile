@@ -12,9 +12,11 @@
 @prefix airo: <https://w3id.org/airo#> .
 @prefix aimd: <https://raw.githubusercontent.com/ci2me/AI-Model-Distribution-ODRL-Profile/main/AIMD.ttl> .
 
+
+# Policy for a high-risk AI Model
 <https://raw.githubusercontent.com/ci2me/AI-Model-Distribution-ODRL-Profile/main/Policy39a0dd61-bb0e-4f53-abe4-f8de57e80317> a odrl:Policy, odrl:Set ;
     odrl:permission [
-        odrl:target <https://example.com/AIModel> ;
+        odrl:target <https://example.com/HighRiskAIModel> ;
         odrl:assigner <https://example.com/CompanyA> ;
         odrl:assignee <https://example.com/CompanyB> ;
         odrl:action odrl:use ;
