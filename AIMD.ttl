@@ -9,9 +9,8 @@
 @prefix schema: <http://schema.org/> .
 @prefix cc: <http://creativecommons.org/ns#> .
 @prefix profile: <http://www.w3.org/ns/dx/prof/> .
-@prefix airo: <https://w3id.org/airo#> .
-@prefix aimd: <https://github.com/ci2me/AI-Model-Distribution-ODRL-Profile/blob/main/AIMD.ttl> .
-
+@prefix airo: <https://delaramglp.github.io/airo/> .
+@prefix aimd: <https://raw.githubusercontent.com/ci2me/AI-Model-Distribution-ODRL-Profile/main/AIMD.ttl> .
 
 aimd:
     a owl:Ontology, profile:Profile ;
