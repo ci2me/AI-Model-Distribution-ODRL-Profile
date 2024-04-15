@@ -1,0 +1,117 @@
+@prefix odrl: <http://www.w3.org/ns/odrl/2/> .
+@prefix dpv:  <https://w3id.org/dpv#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix schema: <http://schema.org/> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix profile: <http://www.w3.org/ns/dx/prof/> .
+@prefix airo: <https://w3id.org/airo#> .
+@prefix aimd: <https://raw.githubusercontent.com/ci2me/AI-Model-Distribution-ODRL-Profile/main/AIMD.ttl> .
+
+
+# Policy for a GPAI model
+<https://raw.githubusercontent.com/ci2me/AI-Model-Distribution-ODRL-Profile/main/Policy76910b39-3286-4c42-ae87-3e581f419770> a odrl:Policy, odrl:Set ;
+    odrl:permission [
+        odrl:target <https://example.com/GPAIModel> ;
+        odrl:assigner <https://example.com/CompanyC> ;
+        odrl:assignee <https://example.com/CompanyD> ;
+        odrl:action odrl:use ;
+        odrl:action odrl:derive ;
+        odrl:action odrl:grantUse ;
+        odrl:action cc:ShareAlike ;
+        odrl:constraint [
+            odrl:leftOperand airo:Purpose ;
+            odrl:operator odrl:neq ;
+            odrl:rightOperand aimd:SocialScoring ;
+        ];
+        odrl:constraint [
+            odrl:leftOperand airo:Purpose ;
+            odrl:operator odrl:neq ;
+            odrl:rightOperand aimd:RemoteBiometricIdentification ;
+        ];
+        odrl:constraint [
+            odrl:leftOperand airo:Purpose ;
+            odrl:operator odrl:neq ;
+            odrl:rightOperand aimd:BiometricCategorisation ;
+        ];
+        odrl:constraint [
+            odrl:leftOperand airo:Purpose ;
+            odrl:operator odrl:neq ;
+            odrl:rightOperand aimd:Manipulation ;
+        ];
+        odrl:constraint [
+            odrl:leftOperand airo:Purpose ;
+            odrl:operator odrl:neq ;
+            odrl:rightOperand aimd:VulnerableExploitation ;
+        ];
+        odrl:constraint [
+            odrl:leftOperand airo:Purpose ;
+            odrl:operator odrl:neq ;
+            odrl:rightOperand aimd:AssessCrimeLikelihood ;
+        ];
+        odrl:constraint [
+            odrl:leftOperand airo:Purpose ;
+            odrl:operator odrl:neq ;
+            odrl:rightOperand aimd:FacialDataScraping ;
+        ];
+        odrl:constraint [
+            odrl:leftOperand airo:Purpose ;
+            odrl:operator odrl:neq ;
+            odrl:rightOperand aimd:EmotionInference ;
+        ];
+        odrl:constraint [
+            odrl:leftOperand airo:PurposeOfDerivation ;
+            odrl:operator odrl:neq ;
+            odrl:rightOperand aimd:SocialScoringOfDerivation ;
+        ];
+        odrl:constraint [
+            odrl:leftOperand airo:PurposeOfDerivation ;
+            odrl:operator odrl:neq ;
+            odrl:rightOperand aimd:RemoteBiometricIdentification ;
+        ];
+        odrl:constraint [
+            odrl:leftOperand airo:PurposeOfDerivation ;
+            odrl:operator odrl:neq ;
+            odrl:rightOperand aimd:BiometricCategorisation ;
+        ];
+        odrl:constraint [
+            odrl:leftOperand airo:PurposeOfDerivation ;
+            odrl:operator odrl:neq ;
+            odrl:rightOperand aimd:Manipulation ;
+        ];
+        odrl:constraint [
+            odrl:leftOperand airo:PurposeOfDerivation ;
+            odrl:operator odrl:neq ;
+            odrl:rightOperand aimd:VulnerableExploitation ;
+        ];
+        odrl:constraint [
+            odrl:leftOperand airo:PurposeOfDerivation ;
+            odrl:operator odrl:neq ;
+            odrl:rightOperand aimd:AssessCrimeLikelihood ;
+        ];
+        odrl:constraint [
+            odrl:leftOperand airo:PurposeOfDerivation ;
+            odrl:operator odrl:neq ;
+            odrl:rightOperand aimd:FacialDataScraping ;
+        ];
+        odrl:constraint [
+            odrl:leftOperand airo:PurposeOfDerivation ;
+            odrl:operator odrl:neq ;
+            odrl:rightOperand aimd:EmotionInference ;
+        ];
+        odrl:obligation [
+            odrl:action aimd:ProvideTechDocumentation ,
+            aimd:Record ,
+            aimd:ProvideUseInstructions ,
+            aimd:DocumentTrainingData ,
+            aimd:AssessModelRisk ,
+            aimd:ReportSeriousIncidents ,
+            aimd:EnsureDataProtection ,
+            aimd:UploadDerivations ,
+            aimd:UploadUseOfDerivation ;
+        ] ;
+    ] .
